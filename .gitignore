@@ -1,4 +1,5 @@
 cache/
+**/__pycache__/
 experiments/
 index_sepqa/
 models/

@@ -195,10 +195,13 @@ dependencies:
   - zstd=1.5.6
   - pip:
       - accelerate==1.2.1
+      - altair==5.5.0
       - attrs==24.3.0
       - backcall==0.2.0
       - beautifulsoup4==4.12.3
       - bleach==6.2.0
+      - blinker==1.9.0
+      - cachetools==5.5.2
       - cbor==1.0.0
       - cbor2==5.6.5
       - certifi==2024.12.14
@@ -218,6 +221,8 @@ dependencies:
       - flash-attn==2.7.2.post1
       - fsspec==2024.12.0
       - gdown==5.2.0
+      - gitdb==4.0.12
+      - gitpython==3.1.44
       - h5py==3.12.1
       - heapdict==1.0.1
       - huggingface-hub==0.27.0
@@ -242,6 +247,7 @@ dependencies:
       - mistune==3.1.0
       - more-itertools==10.5.0
       - mpmath==1.3.0
+      - narwhals==1.28.0
       - nbclient==0.10.2
       - nbconvert==7.16.5
       - nbformat==5.10.4
@@ -267,6 +273,9 @@ dependencies:
       - pandocfilters==1.5.1
       - patsy==1.0.1
       - pickleshare==0.7.5
+      - protobuf==5.29.3
+      - pyarrow==19.0.1
+      - pydeck==0.9.1
       - pyjnius==1.6.1
       - pynvml==12.0.0
       - pysocks==1.7.1
@@ -284,12 +293,15 @@ dependencies:
       - rpds-py==0.22.3
       - safetensors==0.4.5
       - sentence-transformers==3.3.1
+      - smmap==5.0.2
       - soupsieve==2.6
       - statsmodels==0.14.4
+      - streamlit==1.42.2
       - sympy==1.13.1
       - tabulate==0.9.0
       - tinycss2==1.4.0
       - tokenizers==0.21.0
+      - toml==0.10.2
       - torch==2.5.1
       - tqdm==4.67.1
       - transformers==4.47.1
@@ -299,6 +311,7 @@ dependencies:
       - urllib3==2.2.3
       - warc3-wet==0.2.5
       - warc3-wet-clueweb09==0.2.5
+      - watchdog==6.0.0
       - webencodings==0.5.1
       - wget==3.2
       - wordcloud==1.9.4
