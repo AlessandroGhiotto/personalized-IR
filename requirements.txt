@@ -1,0 +1,11 @@
+streamlit
+pandas
+re
+numpy
+sentence_transformers
+faiss
+joblib
+functools
+emoji
+nltk
+python-terrier
