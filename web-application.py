@@ -8,12 +8,32 @@ def main():
     st.title("Personalized IR", anchor=False)
     st.markdown(
         """Author: &nbsp; Alessandro Ghiotto &nbsp;
-        [![Personal Profile](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/AlessandroGhiotto) 
-        &nbsp; -- &nbsp; Select the model, the tags and write your query to search for the most relevant documents between
-        a subset of data from Stack Exchange.
+        [![Personal Profile](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/AlessandroGhiotto)  
+        Select a model, choose the tags, and enter your query to retrieve the most relevant documents from 
+        a subset of Stack Exchange answers.
         """,
         unsafe_allow_html=True,
     )
+    with st.expander("Models details"):
+        st.markdown(
+            r"""
+            - **Baseline**: BM25 model with $c = 1.0$ and $k_1 = 2.5$. The text is preprocessed by removing stopwords, stemming, and lowercasing.
+            - **Neural Reranker**: BM25 % 100 >> .9 $\times$ BiEncoder + .1 $\times$BM25,  
+                where BiEncoder is a dense retriever which
+                uses [*"sentence-transformers/all-MiniLM-L12-v2"*](https://huggingface.co/sentence-transformers/all-MiniLM-L12-v2) 
+                as embedding model. The score is given by the cosine similarity between the query and the document embeddings.
+            - **Personalized**: BM25 % 100 >> .7 $\times$ BiEncoder + .1 $\times$ BM25 + .2 $\times$ TagsScore,  
+                where TagsScore is a personalized
+                score based on the tags of the user given as input and the tags of the user that have written the answer.
+
+            **Notes**:
+            - % k : is the rank cut-off at k. Only the top k documents are kept.  
+            - \>\>  : is the "compose" operator (then), it allow to create a pipeline of models.  
+            - The "linear combination" of the models creates a new score based on the weighted sum of the scores of the models. All the scores are normalized.
+            - [FAISS](https://github.com/facebookresearch/faiss) is used for the dense retrieval and [PyTerrier](https://pyterrier.readthedocs.io/en/latest/) 
+            is used for everything else.
+            """
+        )
 
     if st.session_state.get("tags") is None:
         st.session_state.search = False
