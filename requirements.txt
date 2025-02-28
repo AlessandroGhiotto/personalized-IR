@@ -6,5 +6,5 @@ faiss-cpu
 joblib
 emoji
 nltk
-open-jdk
+openjdk
 python-terrier
