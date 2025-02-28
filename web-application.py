@@ -30,6 +30,7 @@ def main():
             - % k : is the rank cut-off at k. Only the top k documents are kept.  
             - \>\>  : is the "compose" operator (then), it allow to create a pipeline of models.  
             - The "linear combination" of the models creates a new score based on the weighted sum of the scores of the models. All the scores are normalized.
+            - The Tags are only used in the Personalized model, they can be omitted in the other models.
             - [FAISS](https://github.com/facebookresearch/faiss) is used for the dense retrieval and [PyTerrier](https://pyterrier.readthedocs.io/en/latest/) 
             is used for everything else.
             """
