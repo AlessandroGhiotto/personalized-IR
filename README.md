@@ -38,5 +38,4 @@ conda env export --no-builds > environment.yaml
 
 This project uses the SE-PQA dataset from:
 
-Kasela, P., Braga, M., Pasi, G., & Perego, R. (2024). SE-PQA: Personalized Community Question Answering.
-[arXiv:2306.16261](https://arxiv.org/abs/2306.16261).
+Kasela, P., Braga, M., Pasi, G., & Perego, R. (2023). SE-PQA: a Resource for Personalized Community Question Answering [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.10679181>
